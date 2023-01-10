@@ -1,0 +1,55 @@
+---
+import {format} from 'date-fns';
+import Layout from './Layout.astro';
+
+const {frontmatter} = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description} type="article" coverImage={frontmatter.coverImage}>
+  <main>
+    <article>
+      <header class="block mb-5 font-inter">
+        <time datetime={format(new Date(frontmatter.date), "yyyy-MM-dd")} class="text-gray-500">{format(new Date(frontmatter.date), "yyyy-MM-dd")}</time>
+        <h1 class="font-bold text-4xl">{frontmatter.title}</h1>
+      </header>
+      <div class="markdown">
+        <slot />
+      </div>
+      <style is:global>
+        .markdown {
+          @apply font-inter break-words;
+        }
+        .markdown p {
+          @apply mb-5;
+        }
+        .markdown h1 {
+          @apply font-bold text-3xl mb-5;
+        }
+        .markdown h2 {
+          @apply font-bold text-2xl mb-5;
+        }
+        .markdown h3 {
+          @apply font-bold text-xl mb-5;
+        }
+        .markdown h4 {
+          @apply font-bold;
+        }
+        .markdown ul {
+          @apply list-disc list-inside my-3;
+        }
+        .markdown li {
+          @apply font-inter mb-1;
+        }
+        .markdown pre {
+          @apply p-3 font-source-code-pro;
+        }
+        .markdown a {
+          @apply underline hover:text-blue-500;
+        }
+        .markdown img {
+          @apply my-3;
+        }
+      </style>
+    </article>
+  </main>
+</Layout>

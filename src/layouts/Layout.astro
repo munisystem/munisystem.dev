@@ -1,0 +1,23 @@
+---
+import Header from '../components/Header.astro';
+import Head from '../components/Head.astro';
+
+const { title, description, type, coverImage } = Astro.props;
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Head
+    title={ title === undefined ? "munisystem.dev" : title }
+    description={description}
+    type={ type === undefined ? "website" : type}
+    coverImage={coverImage}
+  />
+	<body>
+    <div class="container mx-auto px-5 max-w-4xl">
+      <Header title="munisystem.dev" />
+      <slot />
+    </div>
+	</body>
+</html>

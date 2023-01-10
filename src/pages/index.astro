@@ -1,0 +1,34 @@
+---
+import { format } from 'date-fns';
+
+import Layout from '../layouts/Layout.astro';
+
+const posts = (await Astro.glob('../pages/posts/*.md')).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+)
+---
+
+<Layout>
+	<main>
+    <div>
+      <section>
+        <ol class="list-none">
+          {
+            posts.map((post) => (
+              <article>
+                <li class="text-lg py-2 font-inter">
+                  <time datetime={format(new Date(post.frontmatter.date), "yyyy-MM-dd")}>{format(new Date(post.frontmatter.date), "yyyy-MM-dd")}</time>
+                  <a href={post.url} class="text-blue-600 hover:text-gray-600 hover:underline">
+                    {post.frontmatter.title}
+                  </a>
+                </li>
+              </article>
+            ))
+          }
+        </ol>
+      </section>
+    </div>
+	</main>
+</Layout>
