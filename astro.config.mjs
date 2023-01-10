@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
@@ -13,9 +13,9 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "nord",
-      wrap: true
-    }
+      wrap: true,
+    },
   },
   output: "server",
-  adapter: vercel()
+  adapter: vercel(),
 });
