@@ -25,7 +25,7 @@ const posts = (await Astro.glob("../pages/posts/*.md")).sort(
                       "yyyy-MM-dd"
                     )}
                   >
-                    {format(new Date(post.frontmatter.date), "yyyy-MM-dd")}
+                  {format(new Date(post.frontmatter.date), "yyyy-MM-dd")}
                   </time>
                   <a
                     href={post.url}

@@ -13,7 +13,7 @@ const { title, description, type, coverImage } = Astro.props;
     type={type === undefined ? "website" : type}
     coverImage={coverImage}
   />
-  <body>
+  <body class="bg-[#faf6f1]">
     <div class="container mx-auto px-5 max-w-4xl">
       <Header title="munisystem.dev" />
       <slot />

@@ -13,13 +13,14 @@ const { frontmatter } = Astro.props;
 >
   <main>
     <article>
-      <header class="block mb-5 font-inter">
+      <header class="block my-10 font-inter">
+        <h1 class="font-bold text-4xl">{frontmatter.title}</h1>
         <time
           datetime={format(new Date(frontmatter.date), "yyyy-MM-dd")}
-          class="text-gray-500"
-          >{format(new Date(frontmatter.date), "yyyy-MM-dd")}</time
+          class="text-sm text-gray-500"
         >
-        <h1 class="font-bold text-4xl">{frontmatter.title}</h1>
+          {format(new Date(frontmatter.date), "yyyy-MM-dd")}
+        </time>
       </header>
       <div class="markdown">
         <slot />
@@ -56,7 +57,7 @@ const { frontmatter } = Astro.props;
           @apply underline hover:text-blue-500;
         }
         .markdown img {
-          @apply my-3 rounded;
+          @apply my-3 rounded shadow-lg;
         }
       </style>
     </article>
