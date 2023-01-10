@@ -1,15 +1,24 @@
 ---
-import {format} from 'date-fns';
-import Layout from './Layout.astro';
+import { format } from "date-fns";
+import Layout from "./Layout.astro";
 
-const {frontmatter} = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title} description={frontmatter.description} type="article" coverImage={frontmatter.coverImage}>
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  type="article"
+  coverImage={frontmatter.coverImage}
+>
   <main>
     <article>
       <header class="block mb-5 font-inter">
-        <time datetime={format(new Date(frontmatter.date), "yyyy-MM-dd")} class="text-gray-500">{format(new Date(frontmatter.date), "yyyy-MM-dd")}</time>
+        <time
+          datetime={format(new Date(frontmatter.date), "yyyy-MM-dd")}
+          class="text-gray-500"
+          >{format(new Date(frontmatter.date), "yyyy-MM-dd")}</time
+        >
         <h1 class="font-bold text-4xl">{frontmatter.title}</h1>
       </header>
       <div class="markdown">
