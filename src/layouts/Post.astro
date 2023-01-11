@@ -22,7 +22,7 @@ const { frontmatter } = Astro.props;
           {format(new Date(frontmatter.date), "yyyy-MM-dd")}
         </time>
       </header>
-      <div class="markdown">
+      <div class="markdown mb-10">
         <slot />
       </div>
       <style is:global>
@@ -62,4 +62,7 @@ const { frontmatter } = Astro.props;
       </style>
     </article>
   </main>
+  <footer>
+    <a href="/" class="flex justify-center my-10 font-inter text-sm text-blue-600 hover:text-gray-600 hover:underline"> Home </a>
+  </footer>
 </Layout>
