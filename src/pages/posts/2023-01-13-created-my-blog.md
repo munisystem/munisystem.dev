@@ -25,7 +25,7 @@ Astro では Markdown が標準でサポートされており、特定の direct
 
 Markdown をそのままページにする機能のおかげでブログそのものは簡単に形にはなった一方で、この形式をそのまま使い続けることはないなと思っている。これは Markdown を直接ページにする形式だと拡張性がないという理由から。
 
-例えば直近だと記事内の画像を WebP で配信したいモチベーションがある。Astro には Next.js における Image Optimization API のように画像のリサイズや圧縮、複数の画像のフォーマットの配信をサポートするための integrations として `@astrojs/images` があるのだが、これは執筆当時では Markdown をそのままページ化する方法だと利用することができない。
+例えば直近だと記事内の画像を WebP で配信したいモチベーションがある。Astro には Next.js における Image Optimization API のように画像のリサイズや圧縮、複数の画像のフォーマットの配信をサポートするための integrations として `@astrojs/image` があるのだが、これは執筆当時では Markdown をそのままページ化する方法だと利用することができない。
 
 - [Images 🚀 Astro Documentation](https://docs.astro.build/en/guides/images/#astros-image-integration)
 
