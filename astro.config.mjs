@@ -23,7 +23,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: 'nord',
-      wrap: true,
+      wrap: false,
     },
   },
   output: 'server',
