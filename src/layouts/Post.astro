@@ -51,13 +51,28 @@ const { frontmatter } = Astro.props;
           @apply font-inter pb-1;
         }
         .markdown pre {
-          @apply p-3 font-source-code-pro mb-5;
+          @apply p-3 mb-5;
+        }
+        .markdown pre>code {
+          @apply font-source-code-pro;
         }
         .markdown a {
           @apply underline hover:text-blue-500;
         }
         .markdown img {
           @apply my-3 rounded shadow-lg;
+        }
+        .markdown p>code::before {
+          content: "`";
+        }
+        .markdown p>code::after {
+          content: "`";
+        }
+        .markdown p>code {
+          @apply font-source-code-pro font-bold
+        }
+        .markdown blockquote {
+          @apply border-l-gray-600 border-l-4 pl-4 italic;
         }
       </style>
     </article>
