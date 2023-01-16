@@ -69,7 +69,7 @@ require("lazy").setup({
 
 - [ [Feature request] Support package snapshot · Issue #298 · wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim/issues/298)
 
-なお packer.nvim にも lazy.nvim のような挙動で Snapshot を取ることについて discussion はされているものの、現時点では実装はされていない。故に将来的には packer.nvim でも自分のモチベーションは解消されるかもしれない。
+なお packer.nvim にも lazy.nvim のような挙動で Snapshot を取ることについて discussion はされている。現時点ではまだ実装はされていないものの、将来的には packer.nvim でも自分のモチベーションは解消されるかもしれない。
 
 - [Feature: Lockfile support · Issue #1009 · wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim/issues/1009)
 
