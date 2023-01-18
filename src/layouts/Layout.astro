@@ -1,6 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-import Head from "../components/Head.astro";
+import Header from '../components/Header.astro';
+import Head from '../components/Head.astro';
 
 const { title, description, type, coverImage } = Astro.props;
 ---
@@ -8,9 +8,9 @@ const { title, description, type, coverImage } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <Head
-    title={title === undefined ? "munisystem.dev" : title}
+    title={title === undefined ? 'munisystem.dev' : title}
     description={description}
-    type={type === undefined ? "website" : type}
+    type={type === undefined ? 'website' : type}
     coverImage={coverImage}
   />
   <body class="bg-[#faf6f1]">
@@ -18,13 +18,18 @@ const { title, description, type, coverImage } = Astro.props;
       <Header title="munisystem.dev" />
       <slot />
     </div>
-  </body>
-  <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-2N5K6Z0D35"></script>
-  <script type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <script
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-2N5K6Z0D35"
+    ></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-    gtag('config', 'G-2N5K6Z0D35');
-  </script>
+      gtag('config', 'G-2N5K6Z0D35');
+    </script>
+  </body>
 </html>

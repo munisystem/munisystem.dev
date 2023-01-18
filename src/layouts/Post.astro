@@ -1,6 +1,6 @@
 ---
-import { format } from "date-fns";
-import Layout from "./Layout.astro";
+import { format } from 'date-fns';
+import Layout from './Layout.astro';
 
 const { frontmatter } = Astro.props;
 ---
@@ -16,10 +16,10 @@ const { frontmatter } = Astro.props;
       <header class="block my-10 font-inter">
         <h1 class="font-bold text-4xl">{frontmatter.title}</h1>
         <time
-          datetime={format(new Date(frontmatter.date), "yyyy-MM-dd")}
+          datetime={format(new Date(frontmatter.date), 'yyyy-MM-dd')}
           class="text-sm text-gray-500"
         >
-          {format(new Date(frontmatter.date), "yyyy-MM-dd")}
+          {format(new Date(frontmatter.date), 'yyyy-MM-dd')}
         </time>
       </header>
       <div class="markdown mb-10">
@@ -53,8 +53,8 @@ const { frontmatter } = Astro.props;
         .markdown pre {
           @apply p-3 mb-5;
         }
-        .markdown pre>code {
-          @apply font-source-code-pro;
+        .markdown pre > code {
+          @apply font-inter;
         }
         .markdown a {
           @apply underline hover:text-blue-500;
@@ -62,14 +62,14 @@ const { frontmatter } = Astro.props;
         .markdown img {
           @apply my-3 rounded shadow-lg;
         }
-        .markdown p>code::before {
-          content: "`";
+        .markdown p > code::before {
+          content: '`';
         }
-        .markdown p>code::after {
-          content: "`";
+        .markdown p > code::after {
+          content: '`';
         }
-        .markdown p>code {
-          @apply font-source-code-pro font-bold
+        .markdown p > code {
+          @apply font-source-code-pro font-bold;
         }
         .markdown blockquote {
           @apply border-l-gray-600 border-l-4 pl-4 italic;
@@ -78,6 +78,11 @@ const { frontmatter } = Astro.props;
     </article>
   </main>
   <footer>
-    <a href="/" class="flex justify-center my-10 font-inter text-sm text-blue-600 hover:text-gray-600 hover:underline"> Home </a>
+    <a
+      href="/"
+      class="flex justify-center my-10 font-inter text-sm text-blue-600 hover:text-gray-600 hover:underline"
+    >
+      Home
+    </a>
   </footer>
 </Layout>

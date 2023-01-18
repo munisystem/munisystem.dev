@@ -1,7 +1,7 @@
-import rss from '@astrojs/rss'
+import rss from '@astrojs/rss';
 
-const postImportResult = import.meta.glob('./posts/*.md', { eager: true })
-const posts = Object.values(postImportResult)
+const postImportResult = import.meta.glob('./posts/*.md', { eager: true });
+const posts = Object.values(postImportResult);
 
 export const get = () =>
   rss({
@@ -12,4 +12,4 @@ export const get = () =>
       title: post.frontmatter.title,
       pubDate: post.frontmatter.pubDate,
     })),
-  })
+  });
