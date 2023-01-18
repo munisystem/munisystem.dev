@@ -7,19 +7,9 @@ import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
-import partytown from '@astrojs/partytown';
-
-// https://astro.build/config
 export default defineConfig({
   site: 'https://munisystem.dev',
-  integrations: [
-    tailwind(),
-    partytown({
-      config: {
-        forward: ['dataLayer.push'],
-      },
-    }),
-  ],
+  integrations: [tailwind()],
   markdown: {
     shikiConfig: {
       theme: 'nord',
