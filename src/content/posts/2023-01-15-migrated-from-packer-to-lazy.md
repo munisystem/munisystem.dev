@@ -1,7 +1,6 @@
 ---
 title: NeoVim のプラグインマネージャーを packer.nvim から lazy.nvim に移行した
 date: 2023-01-15
-layout: '../../layouts/Post.astro'
 ---
 
 最近 lazy.nvim という NeoVim のプラグインマネージャーの存在を知った。

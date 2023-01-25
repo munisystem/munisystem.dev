@@ -3,10 +3,10 @@ import { format } from 'date-fns';
 
 import Layout from '../layouts/Layout.astro';
 
-const posts = (await Astro.glob('../pages/posts/*.md')).sort(
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('posts')).sort(
   (a, b) =>
-    new Date(b.frontmatter.date).valueOf() -
-    new Date(a.frontmatter.date).valueOf()
+    a.data.date.valueOf() - b.data.date.valueOf()
 );
 ---
 
@@ -21,17 +21,17 @@ const posts = (await Astro.glob('../pages/posts/*.md')).sort(
                 <li class="text-lg py-2 font-inter">
                   <time
                     datetime={format(
-                      new Date(post.frontmatter.date),
+                      new Date(post.data.date),
                       'yyyy-MM-dd'
                     )}
                   >
-                    {format(new Date(post.frontmatter.date), 'yyyy-MM-dd')}
+                    {format(new Date(post.data.date), 'yyyy-MM-dd')}
                   </time>
                   <a
-                    href={post.url}
+                    href=`/posts/${post.slug}`
                     class="text-blue-600 hover:text-gray-600 hover:underline"
                   >
-                    {post.frontmatter.title}
+                    {post.data.title}
                   </a>
                 </li>
               </article>

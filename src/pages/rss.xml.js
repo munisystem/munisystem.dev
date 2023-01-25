@@ -1,15 +1,16 @@
 import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
-const postImportResult = import.meta.glob('./posts/*.md', { eager: true });
-const posts = Object.values(postImportResult);
-
-export const get = () =>
-  rss({
+export async function get(context) {
+  const posts = await getCollection('posts');
+  return rss({
     title: 'munisystem.dev',
-    site: import.meta.env.SITE,
+    description: "munisystem's blog",
+    site: context.site,
     items: posts.map((post) => ({
-      link: post.url,
-      title: post.frontmatter.title,
-      pubDate: post.frontmatter.pubDate,
+      link: `/posts/${post.slug}`,
+      title: post.data.title,
+      pubDate: post.data.date,
     })),
   });
+}

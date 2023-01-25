@@ -2,24 +2,31 @@
 import { format } from 'date-fns';
 import Layout from './Layout.astro';
 
-const { frontmatter } = Astro.props;
+interface Props {
+  title: string;
+  date: Date;
+  description?: string;
+  coverImage?: string;
+}
+
+const { title, date, description, coverImage } = Astro.props;
 ---
 
 <Layout
-  title={frontmatter.title}
-  description={frontmatter.description}
+  title={title}
+  description={description}
   type="article"
-  coverImage={frontmatter.coverImage}
+  coverImage={coverImage}
 >
   <main>
     <article>
       <header class="block my-10 font-inter">
-        <h1 class="font-bold text-4xl">{frontmatter.title}</h1>
+        <h1 class="font-bold text-4xl">{title}</h1>
         <time
-          datetime={format(new Date(frontmatter.date), 'yyyy-MM-dd')}
+          datetime={format(date, 'yyyy-MM-dd')}
           class="text-sm text-gray-500"
         >
-          {format(new Date(frontmatter.date), 'yyyy-MM-dd')}
+          {format(date, 'yyyy-MM-dd')}
         </time>
       </header>
       <div class="markdown mb-10">
