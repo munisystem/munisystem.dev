@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const posts = (await getCollection('posts')).sort(
   (a, b) =>
-    a.data.date.valueOf() - b.data.date.valueOf()
+    b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
 
