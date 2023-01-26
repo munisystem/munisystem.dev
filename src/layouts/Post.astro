@@ -2,35 +2,34 @@
 import { format } from 'date-fns';
 import Layout from './Layout.astro';
 
+import type { CollectionEntry } from 'astro:content';
 interface Props {
-  title: string;
-  date: Date;
-  description?: string;
-  coverImage?: string;
+  post: CollectionEntry<'posts'>;
 }
 
-const { title, date, description, coverImage } = Astro.props;
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
 <Layout
-  title={title}
-  description={description}
+  title={post.data.title}
+  description={post.data.description}
   type="article"
-  coverImage={coverImage}
+  coverImage={post.data.coverImage}
 >
   <main>
     <article>
       <header class="block my-10 font-inter">
-        <h1 class="font-bold text-4xl">{title}</h1>
+        <h1 class="font-bold text-4xl">{post.data.title}</h1>
         <time
-          datetime={format(date, 'yyyy-MM-dd')}
+          datetime={format(post.data.date, 'yyyy-MM-dd')}
           class="text-sm text-gray-500"
         >
-          {format(date, 'yyyy-MM-dd')}
+          {format(post.data.date, 'yyyy-MM-dd')}
         </time>
       </header>
       <div class="markdown mb-10">
-        <slot />
+        <Content />
       </div>
       <style is:global>
         .markdown {
