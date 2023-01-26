@@ -56,6 +56,15 @@ const { Content } = await post.render();
         .markdown li {
           @apply font-inter pb-1;
         }
+        .markdown li > code::before {
+          content: '`';
+        }
+        .markdown li > code::after {
+          content: '`';
+        }
+        .markdown li > code {
+          @apply font-inter font-bold;
+        }
         .markdown pre {
           @apply p-3 mb-5;
         }
