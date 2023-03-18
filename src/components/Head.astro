@@ -30,11 +30,16 @@ const desc = !description ? '' : description;
   <meta property="og:type" content={type} />
   <meta property="og:site_name" content="munisystem.dev" />
   <meta property="og:url" content="munisystem.dev" />
+  <meta property="og:description" content={desc} />
+
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={desc} />
+  <meta property="twitter:creator" content="@munisystem" />
+
   {
     typeof coverImage !== 'undefined' && (
-      <meta property="og:image" content={new URL(coverImage, Astro.url)} />
+      <meta property="twitter:image" content={new URL(coverImage, Astro.url)} />
     )
   }
-  <meta property="og:description" content={desc} />
-  <meta property="twitter:creator" content="@munisystem" />
 </head>
