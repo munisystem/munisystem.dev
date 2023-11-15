@@ -77,6 +77,9 @@ const { Content } = await post.render();
         .markdown img {
           @apply my-3 rounded shadow-lg;
         }
+        .markdown p:has(> img) {
+          @apply text-center;
+        }
         .markdown p > code::before {
           content: '`';
         }
@@ -88,6 +91,9 @@ const { Content } = await post.render();
         }
         .markdown blockquote {
           @apply border-l-gray-600 border-l-4 pl-4 italic;
+        }
+        .markdown hr {
+          @apply h-1 mb-5 bg-gray-600;
         }
       </style>
     </article>
