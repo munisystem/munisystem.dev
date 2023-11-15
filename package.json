@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "pkgx": "node@18 pnpm",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "astro dev",
